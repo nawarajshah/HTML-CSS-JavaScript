@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Background Image</title>
-
-    <style>
-        body {
-            color: #545454;
-            font-family: 'Open Sans', sans-serif;
-            font-size: large;
-            /* background-image: url("pencil.png"); */
-        }
-
-        #center {
-            margin: 0;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Multimedia</title>
 </head>
-<body style='background-image: url("pencil.png");'>
-    <div id="center">
-        Change the Background Image
-    </div>
+<body>
+    <video width="320" controls muted>
+        <source src="Intro to course.mp4" type="video/mp4">
+        <!-- <source src="sound.ogg" type="audio/ogg"> -->
+    </video>
+    <button onclick="video.play();showProperty()">Play audio</button>
+    <button onclick="video.pause();showProperty()">Pause audio</button>
+    <button onclick="video.requestFullscreen();showProperty()">Full Screen</button>
+
+    <script>
+        var video = document.querySelector("video");
+
+        function showProperty() {
+            console.log("Paused?: " + video.paused);
+            console.log("CUrrent time: " + video.currentTime);
+            console.log("Duration: " + video.duration);
+            console.log("Vloume: " + video.volume);
+        }
+    </script>
 </body>
 </html>
