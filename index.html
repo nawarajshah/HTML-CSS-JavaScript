@@ -3,26 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML5 Multimedia</title>
+    <title>HTML Table</title>
+    <style>
+        * {
+            font-size: xx-small;
+        }
+
+        table {
+            border: 3px solid black;
+            border-spacing: 4px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 35px;
+        }
+    </style>
 </head>
 <body>
-    <video width="320" controls muted>
-        <source src="Intro to course.mp4" type="video/mp4">
-        <!-- <source src="sound.ogg" type="audio/ogg"> -->
-    </video>
-    <button onclick="video.play();showProperty()">Play audio</button>
-    <button onclick="video.pause();showProperty()">Pause audio</button>
-    <button onclick="video.requestFullscreen();showProperty()">Full Screen</button>
-
-    <script>
-        var video = document.querySelector("video");
-
-        function showProperty() {
-            console.log("Paused?: " + video.paused);
-            console.log("CUrrent time: " + video.currentTime);
-            console.log("Duration: " + video.duration);
-            console.log("Vloume: " + video.volume);
-        }
-    </script>
+    <table>
+        <caption>This is just a caption</caption>
+        <colgroup>
+            <col span="2" style="background-color: lightgrey;">
+            <col span="2" style="background-color: aquamarine;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>col 1</th>
+                <th>col 2</th>
+                <th>col 3</th>
+                <th>col 4</th>
+                <th>col 5</th>
+                <th>col 6</th>
+                <th>col 7</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="3">1</td>
+                <td rowspan="3">2</td>
+                <td colspan="2">3</td>
+                <td rowspan="2">N</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td colspan="3">9</td>
+                <td colspan="2">10</td>
+                <td>N</td>
+            </tr>
+            <tr>
+                <td colspan="7">N</td>
+            </tr>
+            <tr>
+                <td>N</td>
+                <td>N</td>
+                <td>N</td>
+                <td>N</td>
+                <td>N</td>
+                <td>N</td>
+                <td>N</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>col 1</th>
+                <th>col 2</th>
+                <th>col 3</th>
+                <th>col 4</th>
+                <th>col 5</th>
+                <th>col 6</th>
+                <th>col 7</th>
+            </tr>
+        </tfoot>
+    </table>
 </body>
 </html>
